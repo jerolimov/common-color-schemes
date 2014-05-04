@@ -9,12 +9,12 @@ layout: default
 {% for colorsPage in site.pages %}
 	{% if colorsPage.layout == "colors" %}
 		<section>
-			<h2><a href="{{ colorsPage.url }}">{{ colorsPage.title }}</a></h2>
+			<h2><a href="{{ site.baseurl }}{{ colorsPage.url }}">{{ colorsPage.title }}</a></h2>
 			
 			<div class="row">
 				{% for colorPage in site.pages %}
 					{% if colorPage.layout == "color" and colorPage.tags == colorsPage.tags %}
-						<a href="{{ colorPage.url }}" class="col-md-2">
+						<a href="{{ site.baseurl }}{{ colorPage.url }}" class="col-md-2">
 							{{ colorPage.color }}
 							<div style="background-color: rgb({{ colorPage.rgb }});"></div>
 						</a>

@@ -3,17 +3,17 @@ layout: default
 ---
 
 <header>
-	<h1><a href="/">Home</a></h1>
+	<h1><a href="{{ site.baseurl }}/">Home</a></h1>
 </header>
 
 {% for tag in page.tags %}
 	<section>
-		<h2>Other <a href="/{{ tag }}-colors.html">{{ tag }} colors</a></h2>
+		<h2>Other <a href="{{ site.baseurl }}/{{ tag }}-colors.html">{{ tag }} colors</a></h2>
 		
 		<div class="row">
 			{% for colorPage in site.pages %}
 				{% if colorPage.layout == "color" and colorPage.tags == tag %}
-					<a href="{{ colorPage.url }}" class="col-md-2">
+					<a href="{{ site.baseurl }}{{ colorPage.url }}" class="col-md-2">
 						{{ colorPage.color }}
 						<div style="background-color: rgb({{ colorPage.rgb }});"></div>
 					</a>
