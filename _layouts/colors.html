@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<header>
+	<h1><a href="/">Home</a></h1>
+</header>
+
+<h2>{{ page.title }}</h2>
+
+{{ content }}
+
+<aside>
+	<h3>All colors</h3>
+
+	<div class="row">
+		{% for colorPage in site.pages %}
+			{% if colorPage.layout == "color" and colorPage.tags == page.tags %}
+				<a href="{{ colorPage.url }}" class="col-md-2">
+					{{ colorPage.color }}
+					<div style="background-color: rgb({{ colorPage.rgb }});"></div>
+				</a>
+			
+			{% endif %}
+		{% endfor %}
+	</div>
+</aside>
+
+<section>
+	<h3>Details</h3>
+
+	<div class="demo row">
+		<div class="col-md-2"></div>
+		<div class="col-md-2">Color on white</div>
+		<div class="col-md-2">Color on lightgray</div>
+		<div class="col-md-2">Color on darkgray</div>
+		<div class="col-md-2">Color on gray</div>
+		<div class="col-md-2">Color on black</div>
+	</div>
+
+	{% for colorPage in site.pages %}
+		{% if colorPage.layout == "color" and colorPage.tags == page.tags %}
+			<div class="demo row">
+				<div class="col-md-2">
+					<h3><a href="{{ colorPage.url }}">{{ colorPage.color }}</a></h3>
+					{{ colorPage.codes }}
+				</div>
+				<div class="col-md-2">
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.25);">25%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.5);">50%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.75);">75%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 1);">100%</div>
+				</div>
+				<div class="col-md-2">
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.25);">25%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.5);">50%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.75);">75%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 1);">100%</div>
+				</div>
+				<div class="col-md-2">
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.25);">25%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.5);">50%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.75);">75%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 1);">100%</div>
+				</div>
+				<div class="col-md-2">
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.25);">25%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.5);">50%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.75);">75%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 1);">100%</div>
+				</div>
+				<div class="col-md-2">
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.25);">25%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.5);">50%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 0.75);">75%</div>
+					<div style="background-color: rgba({{ colorPage.rgb }}, 1);">100%</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</section>

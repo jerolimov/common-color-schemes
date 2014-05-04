@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<header>
+	<h1>Different common color schemes</h1>
+</header>
+
+{% for colorsPage in site.pages %}
+	{% if colorsPage.layout == "colors" %}
+		<section>
+			<h2><a href="{{ colorsPage.url }}">{{ colorsPage.title }}</a></h2>
+			
+			<div class="row">
+				{% for colorPage in site.pages %}
+					{% if colorPage.layout == "color" and colorPage.tags == colorsPage.tags %}
+						<a href="{{ colorPage.url }}" class="col-md-2">
+							{{ colorPage.color }}
+							<div style="background-color: rgb({{ colorPage.rgb }});"></div>
+						</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</section>
+	{% endif %}
+{% endfor %}

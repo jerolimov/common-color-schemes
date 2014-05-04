@@ -1,0 +1,31 @@
+header, footer, article, aside, section {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.col-md-2 > * {
+	margin: 0px;
+	padding: 5px;
+}
+code {
+	color: black;
+}
+.demo > :nth-child(2) {
+	color: black;
+	background-color: white;
+}
+.demo > :nth-child(3) {
+	color: black;
+	background-color: lightgray;
+}
+.demo > :nth-child(4) {
+	color: white;
+	background-color: darkgray;
+}
+.demo > :nth-child(5) {
+	color: white;
+	background-color: gray;
+}
+.demo > :nth-child(6) {
+	color: white;
+	background-color: black;
+}
